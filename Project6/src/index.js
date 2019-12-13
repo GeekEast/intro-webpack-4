@@ -1,16 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-export class Search extends React.Component {
-  render() {
-    return (
-      <div id='search-text'> Search</div>
-    )
-  }
-}
+import { Search } from './Search'
 
 ReactDOM.render(
   <Search></Search>,
   document.getElementById("root")
 )
-
+// document.write(helloworld());
