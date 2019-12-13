@@ -11,17 +11,17 @@
 ### 项目梗概
 | Project Name | Description                               |
 | ------------ | ----------------------------------------- |
-| Project 1    | 引入: webpack安装及配置                   |
-| Project 2    | 引入: 依赖树: entry, output               |
-| Project 3    | 基础: 概念: loaders, plugins, mode        |
-| Project 4    | 基础: 解析es6                             |
-| Project 5    | 基础: 解析jsx                             |
-| Project 6    | 基础: 解析css,less,sass                   |
-| Project 7    | 基础: 解析图片和字体 `file-loader `       |
-| Project 8    | 基础: 解析图片 `url-loader  `             |
-| Project 9    | 基础: webpack**自动重新build**            |
-| Project 10   | 基础: webpack自动重新build+**刷新浏览器** |
-| Project 11   | 接触: 文件指纹(增量缓存)与文件压缩        |
+| Project 1    | **引入**: webpack安装及配置                   |
+| Project 2    | **引入**: 依赖树: entry, output               |
+| Project 3    | **基础**: 概念: loaders, plugins, mode        |
+| Project 4    | **基础**: 解析es6                             |
+| Project 5    | **基础**: 解析jsx                             |
+| Project 6    | **基础**: 解析css,less,sass                   |
+| Project 7    | **基础**: 解析图片和字体 `file-loader `       |
+| Project 8    | **基础**: 解析图片 `url-loader  `             |
+| Project 9    | **基础**: webpack**自动重新build**            |
+| Project 10   | **基础**: webpack自动重新build+**刷新浏览器** |
+| Project 11   | **基础**: 文件指纹(增量缓存)与文件压缩        |
 
 ### 占位符
 <div><img src="img/2019-12-13-22-12-59.png"></div>
