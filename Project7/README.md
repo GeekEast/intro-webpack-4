@@ -4,6 +4,7 @@
 
 - [解析图片](#%E8%A7%A3%E6%9E%90%E5%9B%BE%E7%89%87)
 - [解析字体](#%E8%A7%A3%E6%9E%90%E5%AD%97%E4%BD%93)
+- [解析url](#%E8%A7%A3%E6%9E%90url)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -105,3 +106,8 @@ module.exports = {
     ]
   }
 }
+```
+
+### 解析url
+- `url-loader`可以设置**较小资源**自动`base64`
+- `url-loader`内部依然用到了`file-loader`
