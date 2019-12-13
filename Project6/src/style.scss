@@ -1,4 +1,11 @@
+@font-face {
+  font-family: "OpenFont";
+  src: url('./font.ttf') format('truetype');
+}
+
 .search-text {
   color: red;
   font-size: 90px;
+  font-family: 'OpenFont';
 }
+

@@ -1,5 +1,5 @@
 'use strict'
-
+const webpack = require('webpack');
 const path = require('path');
 module.exports = {
   entry: './src/index.js',
@@ -7,7 +7,7 @@ module.exports = {
     path: path.join(__dirname,'dist'),
     filename: 'bundle.js'
   },
-  mode: "production",
+  mode: "development",
   watchOptions: {
     ignored: /node_modules/, //忽略文件夹
     aggregateTimeout: 300, // 检测到变化300ms后执行
@@ -45,5 +45,12 @@ module.exports = {
         use: ['file-loader']
       }
     ]
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ],
+  devServer: {
+    contentBase: './dist', // 输出目录
+    hot: true // 开启热更新
   }
 }

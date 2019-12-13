@@ -8,6 +8,11 @@ module.exports = {
     filename: 'bundle.js'
   },
   mode: "production",
+  watchOptions: {
+    ignored: /node_modules/, //忽略文件夹
+    aggregateTimeout: 300, // 检测到变化300ms后执行
+    poll: 1000 // 每秒1000次
+  },
   module: {
     rules: [
       {

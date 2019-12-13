@@ -1,3 +1,9 @@
-import { Search } from './helloworld'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Search } from './Search'
 
-// document.write(helloworld()); 
+ReactDOM.render(
+  <Search></Search>,
+  document.getElementById("root")
+)
+// document.write(helloworld());

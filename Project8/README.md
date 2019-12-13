@@ -2,61 +2,23 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table Of Content
 
-- [解析url](#%E8%A7%A3%E6%9E%90url)
+- [文件监听](#%E6%96%87%E4%BB%B6%E7%9B%91%E5%90%AC)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-### 解析url
-- `url-loader`可以设置**较小资源**自动`base64`
-- `url-loader`内部依然用到了`file-loader`
-- **安装**: `yarn add --dev url-loader`
-- **配置webpack**
+### 文件监听
+- **目的**: 修改文件后让webpack**自动**build
+- **缺陷**: 页面还是需要**手动**刷新的
+- **配置**: `webpack.config.js`
 ```javascript
-const path = require('path');
 module.exports = {
-  entry: './src/index.js',
-  output: {
-    path: path.join(__dirname,'dist'),
-    filename: 'bundle.js'
-  },
-  mode: "production",
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        use: 'babel-loader'
-      },
-      {
-        test: /\.css$/,
-        use: ['style-loader','css-loader'] // 顺序很重要
-      },
-      {
-        test: /\.less$/,
-        use: ['style-loader','css-loader','less-loader']
-      },
-      {
-        test: /\.scss$/,
-        use: ['style-loader','css-loader','sass-loader']
-      },
-      {
-        test: /\.(png|jpg|svg|gif)$/,
-        use: [{
-          loader: 'url-loader',
-          options: {
-            limit: 10240  //小于10kb的文件自动base64 
-          }
-        }]
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: [{
-          loader: 'url-loader',
-          options: {
-            limit: 10240  //小于10kb的文件自动base64 
-          }
-        }]
-      }
-    ]
+  // watch:true, // 开启 options 才有意义
+  wathOptions: {
+    ignored: /node_modules/, //忽略文件夹
+    aggregateTimeout: 300, // 检测到变化300ms后执行
+    poll: 1000 // 每秒1000次
   }
 }
 ```
+- **开启方法1**: `watch: webpack --watch` in `package.json`, 
+- **开启方法2**: `watch:true` in `webpack.config.js`
