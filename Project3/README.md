@@ -1,3 +1,18 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+## Table Of Content
+
+- [基本概念](#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5)
+  - [Loaders](#loaders)
+    - [常用](#%E5%B8%B8%E7%94%A8)
+    - [用法](#%E7%94%A8%E6%B3%95)
+  - [Plugins](#plugins)
+    - [常用](#%E5%B8%B8%E7%94%A8-1)
+    - [用法](#%E7%94%A8%E6%B3%95-1)
+  - [Mode](#mode)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## 基本概念
 ### Loaders
 - webpack默认支持`JavaScript`和`JSON`文件

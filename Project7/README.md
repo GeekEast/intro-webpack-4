@@ -2,77 +2,17 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table Of Content
 
-- [解析css](#%E8%A7%A3%E6%9E%90css)
-- [解析less](#%E8%A7%A3%E6%9E%90less)
-- [配置sass](#%E9%85%8D%E7%BD%AEsass)
+- [解析图片](#%E8%A7%A3%E6%9E%90%E5%9B%BE%E7%89%87)
+- [解析字体](#%E8%A7%A3%E6%9E%90%E5%AD%97%E4%BD%93)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-### 解析css
-- **css-loader**: `.css` -> `commonjs对象`
-- **style-loader**: `commonjs对象` -> `<style>`
-- **前提**: 需要将`css`引入到**任意**`js`文件中去
-- **安装**`yarn add --dev style-loader css-loader`
-- **配置**
+### 解析图片
+- **安装** `yarn add --dev file-loader`
+- **配置webpack**
 ```javascript
 'use strict'
-const path = require('path');
-module.exports = {
-  entry: './src/index.js',
-  output: {
-    path: path.join(__dirname,'dist'),
-    filename: 'bundle.js'
-  },
-  mode: "production",
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: ['style-loader','css-loader'] //从右向左执行，顺序很重要
-      }
-    ]
-  }
-}
-```
 
-### 解析less
-- **less-loader**: `.less` -> `.css`
-- **安装**: `yarn add --dev less less-loader`
-- **配置**
-```javascript
-const path = require('path');
-module.exports = {
-  entry: './src/index.js',
-  output: {
-    path: path.join(__dirname,'dist'),
-    filename: 'bundle.js'
-  },
-  mode: "production",
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        use: 'babel-loader'
-      },
-      {
-        test: /\.css$/,
-        use: ['style-loader','css-loader'] // 顺序很重要
-      },
-      {
-        test: /\.less$/,
-        use: ['style-loader','css-loader','less-loader']
-      }
-    ]
-  }
-}
-```
-
-### 配置sass
-
-- **sass-loader**: `.scss` -> `.css`
-- **安装**: `yarn add --dev node-sass sass-loader`
-- **配置**
-```javascript
 const path = require('path');
 module.exports = {
   entry: './src/index.js',
@@ -96,14 +36,72 @@ module.exports = {
         use: ['style-loader','css-loader','less-loader']
       },
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.scss$/,
         use: ['style-loader','css-loader','sass-loader']
+      },
+      {
+        test: /\.(png|jpg|svg|gif)$/,
+        use: ['file-loader']
       }
     ]
   }
 }
 ```
-<div style="text-align:center; margin:auto"><img src="img/2019-12-13-18-44-49.png"></div>
+- **结果**: `f0c3659aac0dd385399473c73723a4ba.png` 实际上是个哈希值
 
+### 解析字体
+- **安装** `yarn add --dev file-loader`
+- **配置scss**
+```scss
+@font-face {
+  font-family: "OpenFont";
+  src: url('./font.ttf') format('truetype');
+}
 
-<div style="text-align:center; margin:auto"><img src="img/2019-12-13-18-45-08.png"></div>
+.search-text {
+  color: red;
+  font-size: 90px;
+  font-family: 'OpenFont';
+}
+``` 
+- **配置webpack**
+```javascript
+'use strict'
+
+const path = require('path');
+module.exports = {
+  entry: './src/index.js',
+  output: {
+    path: path.join(__dirname,'dist'),
+    filename: 'bundle.js'
+  },
+  mode: "production",
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        use: 'babel-loader'
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader','css-loader'] // 顺序很重要
+      },
+      {
+        test: /\.less$/,
+        use: ['style-loader','css-loader','less-loader']
+      },
+      {
+        test: /\.scss$/,
+        use: ['style-loader','css-loader','sass-loader']
+      },
+      {
+        test: /\.(png|jpg|svg|gif)$/,
+        use: ['file-loader']
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: ['file-loader']
+      }
+    ]
+  }
+}

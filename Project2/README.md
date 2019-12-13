@@ -1,3 +1,13 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+## Table Of Content
+
+- [入口出口](#%E5%85%A5%E5%8F%A3%E5%87%BA%E5%8F%A3)
+  - [entry](#entry)
+  - [output](#output)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## 入口出口
 
 ### entry

@@ -7,4 +7,8 @@
 | Project 4    | 解析es6                    |
 | Project 5    | 解析jsx                    |
 | Project 6    | 解析css,less,sass          |
+| Project 7    | 解析图片和字体             |
+| Project 7    | B3                         |
+| Project 7    | B3                         |
+| Project 7    | B3                         |
 | Project 7    | B3                         |
