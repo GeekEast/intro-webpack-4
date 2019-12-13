@@ -24,4 +24,4 @@
 | Project 11   | 文件指纹(增量缓存)与文件压缩        |
 
 ### 占位符
-<div style="text-align:center; margin:auto"><img src="img/2019-12-13-22-12-59.png"></div>
+<div><img src="img/2019-12-13-22-12-59.png"></div>
