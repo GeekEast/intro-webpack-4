@@ -105,10 +105,6 @@ module.exports = {
 | production  | NODE_ENV=production; turn on `FlagDependencyUsagePlugin`, `FlagIncludedChunksPlugin`, `ModuleConcatenationPlugin`, `NoEmitOnErrorsPlugin`, `OccurrenceOrderPlugin`, `SideEffectsFlagPlugin`, `TerserPlugin` |
 | none        | 不开启任何plugin                                                                                                                                                                                            |
 
-
-
-
-
 ### 占位符
 <div style="text-align:center; margin:auto"><img src="img/2019-12-13-22-12-59.png"></div>
 
@@ -118,3 +114,6 @@ module.exports = {
 
 
 <div style="text-align:center; margin:auto"><img src="img/2019-12-13-18-45-08.png"></div>
+
+### Reference
+- [Docs](https://webpack.docschina.org/configuration/resolve/)
