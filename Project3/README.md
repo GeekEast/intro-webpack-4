@@ -8,7 +8,7 @@
 
 #### ES6解析
 - **Install Package** `yarn add --dev @babel/{core,preset-env} babel-loader`
-- **Config Webpac**
+- **Config Webpack**
 ```javascript
 const path = require('path');
 module.exports = {
