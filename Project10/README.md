@@ -51,7 +51,7 @@
 ```
 
 ##### HTML 压缩
-- **安装**: `yarn add --dev html-webpack-plugin`\
+- **安装**: `yarn add --dev html-webpack-plugin`
 - **注意**: **一个html对应一个new HtmlWebpackPlugin配置**
 ```javascript
   const HtmlWebpackPlugin = require('html-webpack-plugin');
